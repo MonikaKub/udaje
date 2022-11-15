@@ -15,7 +15,7 @@ std::string vzdelani;
 
 /*   if (c.vek < 0 && c.vek > 120) {
         std::cout << "Rekord ""\n";
-        goto c.vekznovu; // insert crying emoji
+        goto c.vekznovu; 
     }
 
     if(c.vzdelani != "zs" || c.vzdelani != "ss" || c.vzdelani != "vs") {
@@ -33,7 +33,7 @@ std::string vzdelani;
     std::cin >> k;
 
     if (k != 2){
-        goto clovekZnovu; // ted mi to opakuje, i kdyz zadam, ze nechci, ale nechapu proc se to vubec opakuje (vzdyt je to nerovnost wtf)
+        goto clovekZnovu; // predelat na cyklus
     }
 
     return 0;
