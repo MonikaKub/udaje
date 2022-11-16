@@ -2,36 +2,30 @@
 #include <string>
 #include <iostream>
 
-Clovek::Clovek()
-{
-    std::cout << "Tve jmeno: ";
-    std::string jmeno;
-    std::cin >> jmeno;
-    std::cout << "Tve prijmeni: ";
-    std::string prijmeni;
-    std::cin >> prijmeni;
+Clovek::Clovek(std::string jmeno, std::string prijmeni, int vek, float vyska, std::string vzdelani): 
+jmeno(jmeno), prijmeni(prijmeni), vek(vek), vyska(vyska), vzdelani(vzdelani){}
 
-    vekznovu:
-    std::cout << "Vek: ";
-    int vek;
-    std::cin >> vek;
-
-    vzdelaniznovu:
-    std::string zs;
-    std::string ss;
-    std::string vs;
-    std::cout <<"Zadej vzdelani (zs, ss, vs): ";
-    std::string vzdelani;
-    std::cin >>vzdelani;
-
-    vyskaznovu:
-    std::cout <<"Jak jste vysoky/a? (V cm) ";
-    double vyska;
-    std::cin >>vyska;
-
+bool Clovek::operator < (const Clovek& clovek) {
+    if (prijmeni != clovek.prijmeni) {
+        return prijmeni < clovek.prijmeni;
+    }
+    
+    return jmeno < clovek.jmeno;
 }
 
-Clovek::~Clovek()
-{
-    //dtor
+bool Clovek::operator > (const Clovek& clovek) {
+    if (prijmeni != clovek.prijmeni) {
+        return prijmeni > clovek.prijmeni;
+    }
+    
+    return jmeno > clovek.jmeno;
 }
+
+Clovek::operator std::string() const {
+    return prijmeni + ", " + jmeno + ", " + std::to_string(vek) + ", " + std::to_string(vyska)  + ", " + vzdelani;
+}
+
+std::string Clovek::to_string(const Clovek& clovek) {
+    return (std::string) clovek;
+}
+Clovek::~Clovek(){}
