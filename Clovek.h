@@ -5,10 +5,16 @@
 class Clovek
 {
     public:
-//        string jmeno, string prijmeni;
-        Clovek();
-        int vek() const;
-        void vypisInfo() const;
+        std::string jmeno;
+        std::string prijmeni;
+        int vek;
+        float vyska;
+        std::string vzdelani;
+        Clovek(std::string jmeno, std::string prijmeni, int vek, float vyska, std::string vzdelani);
+        bool operator < (const Clovek& clovek);
+        bool operator > (const Clovek& clovek);
+        std::string to_string(const Clovek&);
+        operator std::string() const;
         virtual ~Clovek();
 
     protected:
